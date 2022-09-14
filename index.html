@@ -4,9 +4,47 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="rev.css">
     <title>Document</title>
+    <style>
+        .container{
+            display: flex;
+        }
+    </style>
 </head>
 <body>
+    <div class="container">
+    <button id="left"><</button>
+    <h1>abcd</h1>
+    <button id="right">></button>
+</div>
+<script>
+    let button_left=document.querySelector("#left")
+    let button_right=document.querySelector("#right")
     
+    let h1=document.querySelector("h1")
+
+
+    button_left.onclick=left
+    button_right.onclick=right
+
+    function left(){
+        let strng=h1.innerText
+        let q=Array.from(strng)
+        let z=q.shift()
+        q.push(z)
+        let strn=q.join("")
+        h1.innerText=strn
+    }
+    function right(){
+        let strng=h1.innerText
+        let q=Array.from(strng)
+        let z=q.pop()
+        q.unshift(z)
+        let strn=q.join("")
+        h1.innerText=strn
+    }
+
+</script>
 </body>
 </html>
